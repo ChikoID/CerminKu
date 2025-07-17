@@ -21,33 +21,11 @@ export default function AnimateBackground() {
         init && (
             <Particles
                 id="tsparticles"
-                className="-z-[1]"
+                className="-z-[10]"
                 particlesLoaded={particlesLoaded}
                 options={{
                     smooth: true,
                     fpsLimit: 120,
-                    interactivity: {
-                        events: {
-                            onClick: {
-                                enable: true,
-                                mode: "push",
-                            },
-                            onHover: {
-                                enable: true,
-                                mode: "repulse",
-                            },
-                            resize: true,
-                        },
-                        modes: {
-                            push: {
-                                quantity: 4,
-                            },
-                            repulse: {
-                                distance: 200,
-                                duration: 0.4,
-                            },
-                        },
-                    },
                     particles: {
                         number: {
                             value: 160,
