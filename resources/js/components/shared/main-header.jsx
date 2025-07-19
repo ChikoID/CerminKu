@@ -1,13 +1,13 @@
 import { Link, usePage } from "@inertiajs/react";
 import NavLink from "../navlink";
 import { useEffect, useState } from "react";
+import { route } from "ziggy-js";
 
 const navbars = [
     { label: "Beranda", href: "#home" },
     { label: "Tentang", href: "#about" },
     { label: "Fitur", href: "#feature" },
     { label: "FAQ", href: "#faq" },
-    
 ];
 
 export default function MainHeader() {
@@ -104,10 +104,10 @@ export default function MainHeader() {
                     </ul>
 
                     <div className="flex items-center gap-4">
-                        {auth ? (
+                        {auth.user ? (
                             <Link
-                                href=""
-                                className="bg-primary-800 px-4 py-2 rounded-xl font-semibold text-primary text-base"
+                                href={"/dashboard"}
+                                className="bg-primary-800 text-white px-4 py-2 rounded-xl font-semibold text-primary text-base"
                             >
                                 Dashboard
                             </Link>
