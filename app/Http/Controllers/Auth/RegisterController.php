@@ -12,9 +12,11 @@ use Inertia\Inertia;
 
 class RegisterController extends Controller
 {
-    public function create()
+    public function create(Request $request)
     {
-        return Inertia::render('auth/register');
+        return Inertia::render('auth/register', [
+            'email' => $request->query('email')
+        ]);
     }
 
     public function store(Request $request)

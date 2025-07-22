@@ -1,13 +1,15 @@
-import { Head, Link, useForm } from "@inertiajs/react";
+import { Head, Link, useForm, usePage } from "@inertiajs/react";
 import AuthLayout from "../../layout/auth-layout";
 import Input from "../../components/ui/input";
 import InputError from "../../components/input-error";
-import { route } from "ziggy-js";
 
 export default function Register() {
+    const { props } = usePage();
+    const initialEmail = props.email || "";
+
     const { data, setData, post, processing, errors, reset } = useForm({
         name: "",
-        email: "",
+        email: initialEmail,
         password: "",
         password_confirmation: "",
     });
