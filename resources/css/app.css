@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-raleway: "Raleway", sans-serif;
+
+    --color-primary-50: #ebfef5;
+    --color-primary-100: #cffce4;
+    --color-primary-200: #a3f7cf;
+    --color-primary-300: #68edb6;
+    --color-primary-400: #2cdb99;
+    --color-primary-500: #08c182;
+    --color-primary-600: #009d6a;
+    --color-primary-700: #007e58;
+    --color-primary-800: #026347;
+    --color-primary-900: #03513c;
+    --color-primary-950: #004030;
+
+    --color-secondary-50: #f4f9f7;
+    --color-secondary-100: #d9eee6;
+    --color-secondary-200: #b4dbce;
+    --color-secondary-300: #86c2ae;
+    --color-secondary-400: #5da48f;
+    --color-secondary-500: #4a9782;
+    --color-secondary-600: #346d5f;
+    --color-secondary-700: #2d584e;
+    --color-secondary-800: #274841;
+    --color-secondary-900: #243d37;
+    --color-secondary-950: #10231f;
+
+    --color-accent-50: #f9f8f1;
+    --color-accent-100: #efe9d6;
+    --color-accent-200: #dcd0a8;
+    --color-accent-300: #cbb77e;
+    --color-accent-400: #bfa160;
+    --color-accent-500: #b48a4c;
+    --color-accent-600: #9e7041;
+    --color-accent-700: #845739;
+    --color-accent-800: #6d4733;
+    --color-accent-900: #5b3c2c;
+    --color-accent-950: #331f15;
+}
+
+html, body {
+  @apply w-full;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@layer components {
+    .bg-fix {
+        @apply fixed top-0 left-0 right-0 w-full;
+    }
+
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+
+    .sm\:flex-center {
+        @apply sm:flex items-center justify-center;
+    }
+
+    .flex-between {
+        @apply flex justify-between;
+    }
+
+    .gradient-blob {
+        position: absolute;
+        border-radius: 80%;
+        filter: blur(100px);
+        opacity: 0.3;
+        z-index: -1;
+    }
+
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+}
